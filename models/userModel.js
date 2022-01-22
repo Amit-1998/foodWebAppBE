@@ -4,7 +4,7 @@ const emailValidator=require('email-validator');
 const bcrypt=require('bcrypt');
 const crypto=require('crypto');
 
-const { PASSWORD } = PROCESS.ENV || require("../secrets");
+const { PASSWORD } = process.env || require("../secrets");
 
 const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 

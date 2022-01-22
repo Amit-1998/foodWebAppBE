@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-
+// hi
 let { PASSWORD } = require("../secrets");
 
 const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;

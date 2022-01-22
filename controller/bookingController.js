@@ -1,5 +1,5 @@
 // let SK="sk_test_pL1X84CZrOSOYRkyyvKuCwR000a36t5jwK";
-const { SK } = require("../secrets");// stripe ki secretKey
+const { SK } = process.env || require("../secrets");// stripe ki secretKey
 // let SK= "sk_test_51KKOExSHWj8d9Va8vNMJfBsBlqfkaOcTdinW6EWiByJQBCSZ2H9C1xr48Uv72JYuHYX1kdeBIQHeputzGigL7Crk00jt8KPulC";
 const stripe=require('stripe')(SK); // syntax of stripe: SK saath mein likhna hi hota hai
 const planModel = require("../models/planModel");

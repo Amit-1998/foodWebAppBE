@@ -1,6 +1,6 @@
 //mongoose ke through connet mongodb
 const mongoose = require("mongoose");
-let { PASSWORD } = require("../secrets");
+const { PASSWORD } = process.env || require("../secrets");
 
 const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 

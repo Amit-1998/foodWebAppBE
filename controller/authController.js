@@ -2,7 +2,7 @@ const express = require("express");
 const userModel = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 const { sendMail } = require("../utility/nodemailer");
-const { JWT_SECRET } = require("../secrets");
+const { JWT_SECRET } = process.env || require("../secrets");
 
 //sign up user
 module.exports.signup = async function signup(req, res) {

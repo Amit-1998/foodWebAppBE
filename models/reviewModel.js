@@ -1,9 +1,10 @@
 const mongoose=require('mongoose');
 // hi
-const { PASSWORD } = process.env || require("../secrets");
+const { PASSWORD } = require("../secrets") || process.env;
 
-const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+// const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
+const db_link = `mongodb+srv://AmitfoodApp:<${PASSWORD}>@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 // const db_link='mongodb+srv://admin:xnDx4jlj5mmzjiVE@cluster0.3irmz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(db_link)
 .then(function(db){

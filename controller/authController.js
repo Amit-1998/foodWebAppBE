@@ -157,7 +157,7 @@ module.exports.forgetpassword = async function forgetpassword(req, res) {
 //resetPassword
 module.exports.resetpassword = async function resetpassword(req, res) {
   try {
-    const token = req.parmas.token;
+    const token = req.params.token;
     let { password, confirmPassword } = req.body;
     const user = await userModel.findOne({ resetToken: token });
     if (user) {

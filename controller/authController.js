@@ -38,7 +38,7 @@ module.exports.login = async function login(req, res) {
         //bcrypt -> compare
         if (user.password == data.password) {
           let uid = user["_id"]; //uid
-          let token = jwt.sign({ payload: uid }, JWT_KEY);
+          let token = jwt.sign({ payload: uid }, JWT_SECRET);
           res.cookie("login", token, { httpOnly: true });
           // res.cookie('isLoggedIn',true);
           return res.json({

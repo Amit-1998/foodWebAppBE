@@ -1,21 +1,22 @@
 //mongoose ke through connet mongodb
 const mongoose = require("mongoose");
-const { PASSWORD } = require("../secrets") || process.env;
+// const { PASSWORD } = require("../secrets") || process.env;
+const { PASSWORD } = process.env;
 
-// const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 // const db_link = `mongodb+srv://AmitfoodApp:<${PASSWORD}>@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-const db_link = `mongodb+srv://AmitfoodApp:'+PASSWORD+'>@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+// const db_link = `mongodb+srv://AmitfoodApp:'+PASSWORD+'>@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 // const db_link =
 //   "mongodb+srv://admin:xnDx4jlj5mmzjiVE@cluster0.3irmz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-mongoose
-  .connect(db_link)
-  .then(function (db) {
-    // console.log(db);
-    console.log("plan db connected");
-  })
-  .catch(function (err) {
-    console.log(err);
-  });
+// mongoose
+//   .connect(db_link)
+//   .then(function (db) {
+//     // console.log(db);
+//     console.log("plan db connected");
+//   })
+//   .catch(function (err) {
+//     console.log(err);
+//   });
 
 const planSchema = new mongoose.Schema({
   name: {

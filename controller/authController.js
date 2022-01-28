@@ -41,10 +41,6 @@ module.exports.login = async function login(req, res) {
           let uid = user["_id"]; //uid
           let token = jwt.sign({ payload: uid }, JWT_SECRET);
           res.cookie("login", token);
-          res.writeHeader(200,{
-            "Set-Cookie":`login=${token};HttpOnly`,
-            "Acess-Control-Allow-Credentials":"true",
-          })
           // res.cookie('isLoggedIn',true);
           return res.json({
             message: "User has logged in",

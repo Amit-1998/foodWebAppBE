@@ -40,7 +40,7 @@ module.exports.login = async function login(req, res) {
         if (user.password == data.password) {
           let uid = user["_id"]; //uid
           let token = jwt.sign({ payload: uid }, JWT_SECRET);
-          res.cookie("login", token, { httpOnly: true });
+          res.cookie("login", token, { httpOnly: true,sameSite:'None',secure:true });
           // res.cookie('isLoggedIn',true);
           return res.json({
             message: "User has logged in",
@@ -106,7 +106,7 @@ module.exports.protectRoute = async function protectRoute(req, res, next) {
       //browser
       const client=req.get('User-Agent');
       if(client.includes("Mozilla")==true){
-        return res.redirect('https://apnazayka101.herokuapp.com/user/login');
+        return res.redirect('https://apnazayka101.herokuapp.com/login');
       }
       //postman
       res.json({

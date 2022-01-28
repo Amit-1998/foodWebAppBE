@@ -91,7 +91,7 @@ module.exports.protectRoute = async function protectRoute(req, res, next) {
       let payload = jwt.verify(token, JWT_SECRET);
       if (payload) {
         console.log("payload token", payload);
-        const user = await userModel.findById(payload);
+        const user = await userModel.findById(payload.payload);
         req.role = user.role;
         req.id = user.id;
         console.log(req.role, req.id);
@@ -115,6 +115,7 @@ module.exports.protectRoute = async function protectRoute(req, res, next) {
   } catch (err) {
     return res.json({
       message: err.message,
+      "reason":"user error"
     });
   }
 };

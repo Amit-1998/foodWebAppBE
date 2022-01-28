@@ -127,8 +127,9 @@ module.exports.forgetpassword = async function forgetpassword(req, res) {
     const user = await userModel.findOne({ email: email });
     if (user) {
       //createResetToken is used to create a new token
-      const resetToken = user.createResetToken(user.confirmPassword);
-      await user.save();
+      const resetToken=crypto.randomBytes(32).toString("hex");
+      await userModel.updateOne({email},{resetToken})
+     // const resetToken = user.createResetToken(user.confirmPassword);
       // http://abc.com/resetpassword/resetToken
       // let resetPasswordLink = `${req.protocol}://${req.get(
       //   "host"

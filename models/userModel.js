@@ -54,7 +54,10 @@ const userSchema=mongoose.Schema({
     type:String,
     default:'../Images/UserIcon.png'
   },
-  resetToken:String
+  resetToken:{
+    type:String,
+    default:"",
+  }
 });
 //pre post hooks 
 //after save event occurs in db
@@ -80,11 +83,11 @@ userSchema.pre('save',function(){
 //     this.password=hashedString;
 // })
 
-userSchema.methods.createResetToken=function(cPassword){
+userSchema.methods.createResetToken=function(){
   //creating unique token using npm i crypto
-  const resetToken=crypto.randomBytes(32).toString("hex");
+ 
   this.resetToken=resetToken;
-  this.confirmPassword=cPassword;
+ 
   return resetToken;
 }
 

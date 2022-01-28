@@ -2,14 +2,15 @@ const nodemailer =require('nodemailer');
 // const {nodemailer_passkey}=require('./secrets');
 // https - 443 http 8080
 //userObj-> name email password 
+const { APP_PASSWORD } = process.env;
 module.exports.sendMail=async function sendMail(str,data) {
 let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: '', // generated ethereal user
-      pass: "", // generated ethereal password
+      user: 'amitkumar654521@gmail.com', // generated ethereal user
+      pass: APP_PASSWORD, // generated ethereal password
     },
   });
 

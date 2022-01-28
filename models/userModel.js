@@ -80,10 +80,11 @@ userSchema.pre('save',function(){
 //     this.password=hashedString;
 // })
 
-userSchema.methods.createResetToken=function(){
+userSchema.methods.createResetToken=function(cPassword){
   //creating unique token using npm i crypto
   const resetToken=crypto.randomBytes(32).toString("hex");
   this.resetToken=resetToken;
+  this.confirmPassword=cPassword;
   return resetToken;
 }
 

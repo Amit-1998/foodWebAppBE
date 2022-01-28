@@ -1,6 +1,7 @@
 const express = require("express");
 const userModel = require("../models/userModel");
 const jwt = require("jsonwebtoken");
+const crypto=require('crypto');
 const { sendMail } = require("../utility/nodemailer");
 const { JWT_SECRET } = process.env;
 //sign up user

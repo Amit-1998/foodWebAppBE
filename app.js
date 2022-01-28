@@ -7,7 +7,7 @@ const { PASSWORD } = process.env;
 const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 var cors = require('cors');
-app.use(cors({credentials:true,origin:"https://apnazayka101.herokuapp.com/"}));
+app.use(cors({credentials:true,origin:"*"}));
 app.use(express.static('public/build'));
 
 const cookieParser=require('cookie-parser');

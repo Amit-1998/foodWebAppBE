@@ -106,7 +106,7 @@ module.exports.protectRoute = async function protectRoute(req, res, next) {
       //browser
       const client=req.get('User-Agent');
       if(client.includes("Mozilla")==true){
-        return res.redirect('/login');
+        return res.redirect('https://apnazayka101.herokuapp.com/user/login');
       }
       //postman
       res.json({

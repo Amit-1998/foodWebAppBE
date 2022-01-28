@@ -129,9 +129,10 @@ module.exports.forgetpassword = async function forgetpassword(req, res) {
       //createResetToken is used to create a new token
       const resetToken = user.createResetToken();
       // http://abc.com/resetpassword/resetToken
-      let resetPasswordLink = `${req.protocol}://${req.get(
-        "host"
-      )}/resetpassword/${resetToken}`;
+      // let resetPasswordLink = `${req.protocol}://${req.get(
+      //   "host"
+      // )}/resetpassword/${resetToken}`;
+      let resetPasswordLink = `https://apna-zayka.vercel.app/resetpassword/${resetToken}`;
       //send email to the user
       //nodemailer
       let obj={

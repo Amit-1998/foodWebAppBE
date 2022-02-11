@@ -5,7 +5,8 @@ const {protectRoute}=require('../controller/authController');
 const {createSession}=require('../controller/bookingController');
 bookingRouter.post('/createSession',protectRoute,createSession);
 bookingRouter.get('/createSession',function(req,res){
-    res.sendFile("/Users/abhishekgoel/Desktop/practiceBackend/foodApp/booking.html");
+    // res.sendFile("/Users/abhishekgoel/Desktop/practiceBackend/foodApp/booking.html");
+    res.sendFile("/Users/Amit/Desktop/foodWebAppBE/booking.html");
 });
 
 module.exports=bookingRouter;

@@ -1,3 +1,8 @@
+
+require("dotenv").config();
+const express = require("express");
+const app = express();
+
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -7,10 +12,6 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
   next();
 });
-
-require("dotenv").config();
-const express = require("express");
-const app = express();
 
 const mongoose=require('mongoose');
 const { PASSWORD } = process.env;

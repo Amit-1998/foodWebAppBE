@@ -1,24 +1,14 @@
-
+const cors = require("cors");
 require("dotenv").config();
 const express = require("express");
 const app = express();
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://apna-zayka.vercel.app");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "*"
-  );
-  res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE");
-  next();
-});
 
+app.use(cors());
 const mongoose=require('mongoose');
 const { PASSWORD } = process.env;
 const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
-var cors = require('cors');
-app.use(cors({origin:"https://apna-zayka.vercel.app/"}));
 app.use(express.static('public/build'));
 
 const cookieParser=require('cookie-parser');

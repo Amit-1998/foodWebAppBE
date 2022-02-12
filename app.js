@@ -13,7 +13,7 @@ const app = express();
 //   res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OTIONS");
 //   next();
 // });
-app.use(cors({credentials:true,origin:true}))
+app.use(cors({origin:true}))
 const mongoose=require('mongoose');
 const { PASSWORD } = process.env;
 const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;

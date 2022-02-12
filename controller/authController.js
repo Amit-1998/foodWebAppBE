@@ -59,12 +59,13 @@ module.exports.login = async function login(req, res) {
     } else {
       return res.json({
         message: "Empty field found",
-      });
+      }); 
     }
   } catch (err) {
     return res.status(500).json({
       message: err.message,
     });
+    
   }
 };
 

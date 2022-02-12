@@ -2,6 +2,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+var cors = require('cors');
 
  app.use(function (req, res, next) {
    res.header("Access-Control-Allow-Origin", "*");
@@ -9,12 +10,11 @@ const app = express();
    
    next();
  });
-app.use(cors())
+app.use(cors());
 const mongoose=require('mongoose');
 const { PASSWORD } = process.env;
 const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
-var cors = require('cors');
 
 app.use(express.static('public/build'));
 

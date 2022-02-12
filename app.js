@@ -3,17 +3,17 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Allow-credentials",false);
-  res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OTIONS");
-  next();
-});
-//app.use(cors())
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   );
+//   res.header("Allow-credentials",false);
+//   res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OTIONS");
+//   next();
+// });
+app.use(cors({credentials:true,origin:true}))
 const mongoose=require('mongoose');
 const { PASSWORD } = process.env;
 const db_link = `mongodb+srv://AmitfoodApp:${PASSWORD}@cluster0.lwgl1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;

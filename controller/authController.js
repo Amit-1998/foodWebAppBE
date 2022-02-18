@@ -136,7 +136,7 @@ module.exports.forgetpassword = async function forgetpassword(req, res) {
       // let resetPasswordLink = `${req.protocol}://${req.get(
       //   "host"
       // )}/resetpassword/${resetToken}`;
-      let resetPasswordLink = `https://apna-zayka.vercel.app/resetpassword/${resetToken}`;
+      let resetPasswordLink = `https://www.apnazayka101.herokuapp.com/resetpassword/${resetToken}`;
       //send email to the user
       //nodemailer
       let obj={

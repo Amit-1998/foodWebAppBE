@@ -10,14 +10,7 @@ const cors = require('cors');
    
 //    next();
 //  });
-//app.use(cors());
-
-const corsOptions ={
-  origin:'http://localhost:3000', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+app.use(cors());
 
 const mongoose=require('mongoose');
 const { PASSWORD } = process.env;

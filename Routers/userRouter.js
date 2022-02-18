@@ -23,7 +23,7 @@ userRouter
 .post(forgetpassword)
 
 userRouter
-.route('/resetpassword/:token')
+.route('/backendResetPassword/:token')
 .post(resetpassword)
 
 userRouter
